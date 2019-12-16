@@ -1,11 +1,13 @@
 import { POST_STUDENT_LOGIN } from "../Actions/StudentLogin";
 import { POST_STUDENT_REGISTRATION } from "../Actions/Registration";
+import { GET_STUDENT_TICKETS } from "../Actions/StudentTickets";
 
 const initialState = {
     username: "",
     email: "",
     role: "",
-    id: 0
+    id: 0,
+    tickets: []
 };
 
 export default function StudentReducer( state = initialState, action ) {
@@ -25,6 +27,13 @@ export default function StudentReducer( state = initialState, action ) {
                 email: action.payload.data.email,
                 role: action.payload.data.role,
                 id: action.payload.data.id
+            };
+        case GET_STUDENT_TICKETS:
+            return {
+                ...state,
+                tickets: action.payload.data.filter(arr => {
+                    return arr.student_id === state.id;
+                })
             };
         default:
             return state
