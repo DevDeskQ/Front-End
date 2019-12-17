@@ -5,10 +5,10 @@ import { getStudentTickets } from "../../Actions/StudentTickets";
 function StudentDashboard({ info, id, getStudentTickets, tickets, category }) {
 
     useEffect(() => {
-        getStudentTickets()
+        getStudentTickets();
     },[getStudentTickets]);
 
-    console.log(tickets);
+
     return (
         <div>
             <div>
@@ -23,6 +23,7 @@ function StudentDashboard({ info, id, getStudentTickets, tickets, category }) {
                     return (
                         <div key={arr.id}>
                         <h4>{arr.title}</h4>
+                        <h4>{tickets[0].categories[0].name}</h4>
                         <h4>Students Name - {arr.student.username}</h4>
                         <p>Description - {arr.description}</p>
                         <p>What I've Tried - {arr.tried}</p>
