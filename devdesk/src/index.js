@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import AdminReducer from './Reducers/AdminReducer';
 import StudentReducer from './Reducers/StudentReducer';
 import HelperReducer from './Reducers/HelperReducer'
-import './index.css';
+import './css/index.css';
 import App from './App';
 
 const rootReducer = combineReducers({admin: AdminReducer, student: StudentReducer, helper: HelperReducer});
