@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { postStudentLogin } from "../../Actions/StudentLogin";
+import  loginImg  from '../../Images/loginImg.jpg';
 
 function Login({ postStudentLogin, history }) {
 
@@ -25,12 +26,17 @@ function Login({ postStudentLogin, history }) {
     };
 
     return (
-        <form onSubmit={submitHandler}>
-            <h2>Login</h2>
-            <input type="text" name="username" value={login.username} placeholder="Username..." onChange={changeHandler} />
-            <input type="password" name="password" value={login.password} placeholder="Password..." onChange={changeHandler} />
-            <button type="submit">Login</button>
+        <div className="loginContainer">
+        <form className="loginForm" onSubmit={submitHandler}>
+            <h2 className="loginTitle">Login</h2>
+            <input className="loginInput" type="text" name="username" value={login.username} placeholder="Username..." onChange={changeHandler} />
+            <input className="loginInput" type="password" name="password" value={login.password} placeholder="Password..." onChange={changeHandler} />
+            <button className="loginBtn" type="submit">Login</button>
+            <h4 className="loginPB">Not a member yet?</h4>
+            <button className="loginBtn" type="submit">Sign Up</button>
         </form>
+            <img className="loginImg" src={loginImg} alt="perfectCode" />
+        </div>
     )
 }
 

@@ -19,11 +19,11 @@ function StudentDashboard({ info, id, getStudentTickets, tickets, category }) {
 
             <div>
                 <h3>My Open Tickets</h3>
-                {tickets.map(arr => {
+                {tickets.map((arr, index) => {
                     return (
                         <div key={arr.id}>
                         <h4>{arr.title}</h4>
-                        <h4>{tickets[0].categories[0].name}</h4>
+                        <h4>{tickets[index].categories[index].name}</h4>
                         <h4>Students Name - {arr.student.username}</h4>
                         <p>Description - {arr.description}</p>
                         <p>What I've Tried - {arr.tried}</p>
