@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getStudentTickets } from "../../Actions/StudentTickets";
+import student from '../../Images/student.png'
 
 function StudentDashboard({ info, id, getStudentTickets, tickets, category }) {
 
@@ -8,26 +9,41 @@ function StudentDashboard({ info, id, getStudentTickets, tickets, category }) {
         getStudentTickets();
     },[getStudentTickets]);
 
+    let openTicket = tickets.filter(arr => {
+        return arr.status === "opened"
+    });
 
+    let resolvedTicket = tickets.filter(arr => {
+        return arr.status === "resolved"
+    });
+    console.log(tickets)
     return (
-        <div>
-            <div>
-                <h3>Welcome Back {info.student.username}</h3>
-                <p>Email - {info.student.email}</p>
-                <p>Role - {info.student.role}</p>
+        <div className="Container studentContainer">
+            <div className="titleBlock">
+                <h1>Welcome back {info.student.username}</h1>
+                <h3>Dev Desk</h3>
+                <h3 className="slogan">Your Path to Perfect Code Harmony</h3>
             </div>
-
-            <div>
-                <h3>My Open Tickets</h3>
+            <div className='studentCard'>
+                <img className="studentImg" src={student} alt="student" />
+                <div className="studentInfo">
+                <p><span className="titles">Email - </span>{info.student.email}</p>
+                <p><span className="titles">Role - </span>{info.student.role}</p>
+                <p><span className="titles">Submitted Tickets - </span> {tickets.length}</p>
+                <p><span className="titles">Open Tickets - </span> {openTicket.length}</p>
+                <p><span className="titles">Resolved Tickets - </span> {resolvedTicket.length}</p>
+                </div>
+            </div>
+            <div className="studentTicket">
                 {tickets.map((arr, index) => {
                     return (
                         <div key={arr.id}>
-                        <h4>{arr.title}</h4>
-                        <h4>{tickets[index].categories[index].name}</h4>
-                        <h4>Students Name - {arr.student.username}</h4>
-                        <p>Description - {arr.description}</p>
-                        <p>What I've Tried - {arr.tried}</p>
-                        <p>Status of Ticket - {arr.status}</p>
+                        <h2 className="titles ticketTitle">{arr.title}</h2>
+                        <h4 className="titles">{tickets[index].categories[index].name}</h4>
+                        <h4><span className="titles">Students Name - </span>{arr.student.username}</h4>
+                        <p><span className="titles"> Description - </span>{arr.description}</p>
+                        <p><span className="titles">What I've Tried - </span>{arr.tried}</p>
+                        <p><span className="titles">Status of Ticket - </span>{arr.status}</p>
                         </div>
                     )})}
             </div>
