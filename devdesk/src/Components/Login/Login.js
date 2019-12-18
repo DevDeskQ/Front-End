@@ -26,7 +26,7 @@ function Login({ postStudentLogin, history }) {
     };
 
     return (
-        <div className="loginContainer">
+        <div className="Container">
         <form className="loginForm" onSubmit={submitHandler}>
             <h2 className="loginTitle">Login</h2>
             <input className="loginInput" type="text" name="username" value={login.username} placeholder="Username..." onChange={changeHandler} />
