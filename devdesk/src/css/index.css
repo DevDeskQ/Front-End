@@ -135,7 +135,8 @@ html {
   display: flex;
   width: 90rem;
   margin: 7rem auto;
-  border-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
@@ -145,6 +146,34 @@ html {
 }
 .ticketTitle {
   font-size: 1.8rem;
+}
+.Nav {
+  background-color: #ADDAD3;
+  margin-bottom: -6.6rem;
+  height: 4rem;
+  border-radius: 1rem 1rem 0 0;
+  justify-content: center;
+}
+.navBar {
+  align-self: center;
+  margin: 0 1rem;
+}
+.navBar button {
+  margin: 0 2rem;
+  width: 10rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: whitesmoke;
+  color: #9CC03C;
+  font-weight: 900;
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+button:hover {
+  background-color: #9CC03C;
+  color: whitesmoke;
+  transition: ease-in-out 1s;
 }
 .loginForm {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
@@ -202,7 +231,7 @@ html {
 .studentCard {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-  margin: 3rem;
+  margin: 4rem 3rem 3rem 3rem;
   width: 17%;
   padding: 1.5rem;
   border-radius: 1rem;
@@ -233,7 +262,7 @@ html {
   line-height: 1.5;
 }
 .titleBlock {
-  margin: 3rem 2rem -18.5rem 3rem;
+  margin: 5rem 2rem -22rem 3rem;
   font-size: 3rem;
   font-weight: 900;
   text-align: center;
