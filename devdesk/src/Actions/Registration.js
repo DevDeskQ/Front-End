@@ -10,7 +10,7 @@ export function postStudentRegistration(data) {
             .post('auth/register', data)
             .then(res => {
                 console.log(res);
-                localStorage.setItem("toke", res.data.token);
+                localStorage.setItem("token", res.data.token);
                 dispatch({ type: POST_STUDENT_REGISTRATION, payload: {
                     data: res.data.user
                     }})
