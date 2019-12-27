@@ -2,6 +2,7 @@ import Axios from "../Utils/Axios";
 
 export const GET_STUDENT_TICKETS = "GET_STUDENT_TICKETS";
 export const GET_TICKET_BY_ID = "GET_TICKET_BY_ID";
+export const PUT_STUDENT_TICKET = "PUT_STUDENT_TICKET";
 
 export function getStudentTickets() {
 
@@ -43,3 +44,18 @@ export function getTicketById(id) {
             })
     }
 }
+
+export function putStudentTicket(id, data) {
+
+    return dispatch => {
+
+        Axios()
+            .put(`tickets/${id}`, data)
+            .then(res => {
+                console.log(res);
+                dispatch({type: PUT_STUDENT_TICKET })
+            })
+                .catch(err => {
+                    console.log(err)
+                })
+    }}
