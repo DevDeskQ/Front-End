@@ -158,10 +158,11 @@ html {
   align-self: center;
   margin: 0 1rem;
 }
-.navBar button {
+.navBar a {
+  text-decoration: none;
   margin: 0 2rem;
-  width: 10rem;
-  padding: 0.5rem;
+  width: 15rem;
+  padding: 0.5rem 3rem;
   border-radius: 1rem;
   background-color: whitesmoke;
   color: #9CC03C;
@@ -170,10 +171,10 @@ html {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
-button:hover {
+a:hover {
   background-color: #9CC03C;
   color: whitesmoke;
-  transition: ease-in-out 1s;
+  transition: ease-in-out 0.4s;
 }
 .loginForm {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
@@ -278,4 +279,14 @@ button:hover {
 }
 .slogan {
   font-family: 'Lato', sans-serif;
+}
+.open {
+  background-color: #F26E60;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.resolved {
+  background-color: #CFE3E2;
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
