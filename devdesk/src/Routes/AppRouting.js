@@ -6,6 +6,8 @@ import Registration from "../Components/Registration/Registration";
 import StudentDashboard from "../Components/Dashboard/StudentDashboard";
 import Logout from "../Components/Login/Logout";
 import EditTicket from "../Components/Tickets/EditTicket";
+import CreateTicket from "../Components/Tickets/CreateTicket";
+import AllTickets from "../Components/Tickets/AllTickets";
 
 function AppRouting() {
 
@@ -17,6 +19,8 @@ function AppRouting() {
             <Route exact path="/logout" component={Logout} />
             <ProtectedRoute exact path="/dashboard" component={StudentDashboard} />
             <ProtectedRoute exact path="/ticket/:id" component={EditTicket} />
+            <ProtectedRoute exact path="/createticket" component={CreateTicket} />
+            <ProtectedRoute exact path="/alltickets" component={AllTickets} />
         </div>
     )
 }

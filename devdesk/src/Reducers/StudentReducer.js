@@ -1,7 +1,8 @@
 import { POST_STUDENT_LOGIN } from "../Actions/StudentLogin";
 import { POST_STUDENT_REGISTRATION } from "../Actions/Registration";
-import { GET_STUDENT_TICKETS } from "../Actions/StudentTickets";
+import { GET_STUDENT_TICKETS, PUT_STUDENT_TICKET} from "../Actions/StudentTickets";
 import { GET_TICKET_BY_ID } from "../Actions/StudentTickets";
+import { POST_STUDENT_TICKET } from "../Actions/StudentTickets";
 
 const initialState = {
     username: "",
@@ -9,7 +10,8 @@ const initialState = {
     role: "",
     id: 0,
     tickets: [],
-    edit: {}
+    edit: {},
+    allTickets: []
 };
 
 export default function StudentReducer( state = initialState, action ) {
@@ -33,14 +35,24 @@ export default function StudentReducer( state = initialState, action ) {
         case GET_STUDENT_TICKETS:
             return {
                 ...state,
+                alltickets: action.payload.data,
                 tickets: action.payload.data.filter(arr => {
-                    return arr.student_id === state.id;
+                    return arr.student_id === state.id
                 })
             };
         case GET_TICKET_BY_ID:
             return  {
                 ...state,
                 edit: action.payload
+            };
+        case POST_STUDENT_TICKET:
+            return  {
+                ...state
+            };
+        case PUT_STUDENT_TICKET:
+            return  {
+                ...state,
+                edit: {}
             };
         default:
             return state

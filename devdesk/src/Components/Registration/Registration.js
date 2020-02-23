@@ -16,7 +16,7 @@ function Registration({ postStudentRegistration, history }) {
             [event.target.name]: event.target.value
         });
     };
-
+    console.log(user);
     const submitHandler = (event) => {
         event.preventDefault();
         postStudentRegistration(user);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { postStudentLogin } from "../../Actions/StudentLogin";
+import { Link } from 'react-router-dom';
 import  loginImg  from '../../Images/loginImg.jpg';
 
 function Login({ postStudentLogin, history }) {
@@ -33,7 +34,7 @@ function Login({ postStudentLogin, history }) {
             <input className="loginInput" type="password" name="password" value={login.password} placeholder="Password..." onChange={changeHandler} />
             <button className="loginBtn" type="submit">Login</button>
             <h4 className="loginPB">Not a member yet?</h4>
-            <button className="loginBtn" type="submit">Sign Up</button>
+            <Link to="/registration" className="loginBtn logLink" type="submit">Sign Up</Link>
         </form>
             <img className="loginImg" src={loginImg} alt="perfectCode" />
         </div>

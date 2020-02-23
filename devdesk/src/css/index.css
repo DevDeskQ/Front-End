@@ -134,7 +134,7 @@ html {
   background-color: #CFE3E2;
   display: flex;
   width: 90rem;
-  margin: 7rem auto;
+  margin: 6rem auto;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
@@ -146,6 +146,13 @@ html {
 }
 .ticketTitle {
   font-size: 1.8rem;
+}
+.center {
+  margin: 0 auto;
+}
+textarea {
+  width: 25rem;
+  height: 5rem;
 }
 .Nav {
   background-color: #ADDAD3;
@@ -175,6 +182,11 @@ a:hover {
   background-color: #9CC03C;
   color: whitesmoke;
   transition: ease-in-out 0.4s;
+}
+.logLink {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 .loginForm {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
@@ -216,6 +228,11 @@ a:hover {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
+.loginBtn:hover {
+  background-color: #9CC03C;
+  color: whitesmoke;
+  transition: ease-in-out 0.4s;
+}
 .loginPB {
   align-self: center;
   margin: 0.5rem;
@@ -245,13 +262,18 @@ a:hover {
 .studentTicket {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-  width: 30%;
+  width: auto;
   padding: 1.5rem;
   border-radius: 1rem;
-  margin: 3rem;
+  margin: 3rem 2rem;
   font-family: 'Raleway', sans-serif;
   background-color: #63B9B0;
   line-height: 1.5;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .studentImg {
   height: 10rem;
@@ -284,9 +306,96 @@ a:hover {
   background-color: #F26E60;
   border-radius: 0.5rem;
   padding: 1rem;
+  margin: 2rem;
+  width: 20rem;
 }
 .resolved {
   background-color: #CFE3E2;
   border-radius: 0.5rem;
   padding: 1rem;
+  margin: 2rem;
+  width: 20rem;
+}
+.editForm {
+  padding: 0.5rem 2rem;
+  margin: 1rem 2rem;
+  font-family: 'Raleway', sans-serif;
+  background-color: #63B9B0;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  width: 25rem;
+  height: 45rem;
+  line-height: 1.5;
+}
+.linkBtn {
+  text-decoration: none;
+  padding: 0.2rem 2rem;
+  display: flex;
+  margin: 1rem auto 0 auto;
+  justify-content: center;
+}
+.deleteBtn {
+  text-decoration: none;
+  padding: 0.3rem 2rem;
+  display: flex;
+  margin: 1rem auto 0 auto;
+  justify-content: center;
+  width: 14rem;
+  align-self: center;
+  border-radius: 0.7rem;
+  background-color: white;
+  color: #F27468;
+  font-weight: 900;
+  font-size: 1rem;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+.deleteBtn:hover {
+  background-color: #F27468;
+  color: whitesmoke;
+  transition: ease-in-out 0.4s;
+}
+.titleInput {
+  width: 100%;
+  height: 1.3rem;
+}
+.editInput {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.createTicket {
+  display: flex;
+  justify-content: center;
+}
+.createForm {
+  padding: 0.5rem 2rem 2rem 2rem;
+  margin: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  background-color: #63B9B0;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  width: 30rem;
+  height: 35rem;
+  line-height: 2;
+}
+.create {
+  margin: 1rem;
+  width: 18rem;
+}
+.align {
+  display: flex;
+  margin-top: 1rem;
+}
+.categories {
+  width: 25.5rem;
+  height: 10rem;
+}
+.createTitle {
+  font-size: 1.8rem;
 }
