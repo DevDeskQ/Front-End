@@ -25,12 +25,12 @@ function Registration({ postStudentRegistration, history }) {
         },2000)};
 
     return (
-        <form onSubmit={submitHandler}>
-            <h2>Registration Form</h2>
-            <input type="text" name="username" placeholder="Username" value={user.username} onChange={changeHandler} />
-            <input type="email" name="email" placeholder="Email" value={user.email} onChange={changeHandler} />
-            <input type="password" name="password" placeholder="Password" value={user.password} onChange={changeHandler} />
-            <button type="submit" >Register</button>
+        <form className="loginForm regForm" onSubmit={submitHandler}>
+            <h2 className="loginTitle" >Registration Form</h2>
+            <input className="loginInput" type="text" name="username" placeholder="Username" value={user.username} onChange={changeHandler} />
+            <input className="loginInput" type="email" name="email" placeholder="Email" value={user.email} onChange={changeHandler} />
+            <input className="loginInput" type="password" name="password" placeholder="Password" value={user.password} onChange={changeHandler} />
+            <button className="loginBtn" type="submit" >Register</button>
         </form>
     )
 }

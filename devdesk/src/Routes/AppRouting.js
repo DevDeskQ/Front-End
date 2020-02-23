@@ -8,6 +8,7 @@ import Logout from "../Components/Login/Logout";
 import EditTicket from "../Components/Tickets/EditTicket";
 import CreateTicket from "../Components/Tickets/CreateTicket";
 import AllTickets from "../Components/Tickets/AllTickets";
+import HelperTicket from "../Components/Tickets/HelperTicket";
 
 function AppRouting() {
 
@@ -21,6 +22,7 @@ function AppRouting() {
             <ProtectedRoute exact path="/ticket/:id" component={EditTicket} />
             <ProtectedRoute exact path="/createticket" component={CreateTicket} />
             <ProtectedRoute exact path="/alltickets" component={AllTickets} />
+            <ProtectedRoute exact path="/helper/:id" component={HelperTicket} />
         </div>
     )
 }

@@ -11,6 +11,13 @@
   font-family: 'Raleway', sans-serif;
   background-color: #63B9B0;
   height: 20rem;
+
+  @media @tablet {
+    margin: 1rem auto;
+    align-self: center;
+    justify-self: center;
+    width: auto;
+  }
 }
 
 .loginTitle {
@@ -58,4 +65,25 @@
 .loginImg {
   justify-items: center;
   padding: 1rem;
+
+  @media @tablet {
+    display: none;
+  }
+}
+
+.regForm {
+  margin-top: 15rem;
+  padding: 1rem 0 0 0;
+  width: 45%;
+
+  @media @desktop {
+    width: 75%;
+  }
+  @media @tablet {
+    width: 75%;
+    margin: 15rem auto;
+  }
+  @media @phone {
+    text-align: center;
+  }
 }

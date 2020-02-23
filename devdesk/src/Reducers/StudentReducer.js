@@ -1,6 +1,6 @@
 import { POST_STUDENT_LOGIN } from "../Actions/StudentLogin";
 import { POST_STUDENT_REGISTRATION } from "../Actions/Registration";
-import { GET_STUDENT_TICKETS, PUT_STUDENT_TICKET} from "../Actions/StudentTickets";
+import { GET_STUDENT_TICKETS, PUT_STUDENT_TICKET, SORT_ALL_STUDENT_TICKETS } from "../Actions/StudentTickets";
 import { GET_TICKET_BY_ID } from "../Actions/StudentTickets";
 import { POST_STUDENT_TICKET } from "../Actions/StudentTickets";
 
@@ -35,7 +35,7 @@ export default function StudentReducer( state = initialState, action ) {
         case GET_STUDENT_TICKETS:
             return {
                 ...state,
-                alltickets: action.payload.data,
+                allTickets: action.payload.data,
                 tickets: action.payload.data.filter(arr => {
                     return arr.student_id === state.id
                 })
@@ -53,6 +53,11 @@ export default function StudentReducer( state = initialState, action ) {
             return  {
                 ...state,
                 edit: {}
+            };
+        case SORT_ALL_STUDENT_TICKETS:
+            return {
+                ...state,
+                allTickets: action.payload.sorted
             };
         default:
             return state

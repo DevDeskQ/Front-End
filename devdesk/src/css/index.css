@@ -140,6 +140,11 @@ html {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
+@media only screen and (max-width: 1450px) {
+  .Container {
+    width: 95%;
+  }
+}
 .titles {
   font-weight: 900;
   font-size: 1.1rem;
@@ -202,6 +207,14 @@ a:hover {
   background-color: #63B9B0;
   height: 20rem;
 }
+@media only screen and (max-width: 980px) {
+  .loginForm {
+    margin: 1rem auto;
+    align-self: center;
+    justify-self: center;
+    width: auto;
+  }
+}
 .loginTitle {
   align-self: center;
   padding-bottom: 1rem;
@@ -242,6 +255,32 @@ a:hover {
 .loginImg {
   justify-items: center;
   padding: 1rem;
+}
+@media only screen and (max-width: 980px) {
+  .loginImg {
+    display: none;
+  }
+}
+.regForm {
+  margin-top: 15rem;
+  padding: 1rem 0 0 0;
+  width: 45%;
+}
+@media only screen and (max-width: 1450px) {
+  .regForm {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .regForm {
+    width: 75%;
+    margin: 15rem auto;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .regForm {
+    text-align: center;
+  }
 }
 .studentContainer {
   flex-direction: column;
@@ -398,4 +437,55 @@ a:hover {
 }
 .createTitle {
   font-size: 1.8rem;
+}
+.helpBlock {
+  flex-direction: row;
+  text-align: center;
+  margin: 1rem auto;
+  font-size: 3rem;
+  font-weight: 900;
+  width: 95%;
+  line-height: 1.5;
+  color: #63B9B0;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  padding: 0.8rem;
+  font-family: Raleway, serif;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+.helpTitle {
+  color: #63B9B0;
+  margin: 1rem 8rem;
+  font-size: 2rem;
+  background-color: whitesmoke;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.3rem;
+  font-family: 'Raleway', sans-serif;
+}
+.helpCate {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  height: 3rem;
+  background-color: #63B9B0;
+  color: #CFE3E2;
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+.searchBlock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: whitesmoke;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+.helpBtn {
+  width: 40%;
+  padding: 0.8rem;
+  margin: 1rem 10rem 0.8rem 10rem;
 }
