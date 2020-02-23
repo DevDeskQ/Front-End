@@ -183,6 +183,22 @@ textarea {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
+@media only screen and (max-width: 1234px) {
+  .navBar a {
+    width: 12rem;
+    margin: 0 1rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .navBar a {
+    margin: 0 0.5rem;
+  }
+}
+@media only screen and (max-width: 853px) {
+  .navBar {
+    display: none;
+  }
+}
 a:hover {
   background-color: #9CC03C;
   color: whitesmoke;
@@ -298,6 +314,12 @@ a:hover {
   align-self: flex-end;
   flex-wrap: wrap;
 }
+@media only screen and (max-width: 1030px) {
+  .studentCard {
+    margin: 30rem auto 0 auto;
+    width: 75%;
+  }
+}
 .studentTicket {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
@@ -320,6 +342,22 @@ a:hover {
   border-radius: 3rem;
   padding-bottom: 1rem;
 }
+@media only screen and (max-width: 1450px) {
+  .studentImg {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .studentImg {
+    width: 40%;
+    margin: 0 8rem 0 2rem;
+  }
+}
+@media only screen and (max-width: 941px) {
+  .studentImg {
+    margin: 0 5rem 0 1rem;
+  }
+}
 .studentInfo {
   line-height: 1.5;
 }
@@ -338,6 +376,21 @@ a:hover {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
+@media only screen and (max-width: 1375px) {
+  .titleBlock {
+    margin-bottom: -25rem;
+  }
+}
+@media only screen and (max-width: 1234px) {
+  .titleBlock {
+    margin-bottom: -28rem;
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .titleBlock {
+    width: 87%;
+  }
+}
 .slogan {
   font-family: 'Lato', sans-serif;
 }
@@ -348,12 +401,32 @@ a:hover {
   margin: 2rem;
   width: 20rem;
 }
+@media only screen and (max-width: 1450px) {
+  .open {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 1160px) {
+  .open {
+    width: 98%;
+  }
+}
 .resolved {
   background-color: #CFE3E2;
   border-radius: 0.5rem;
   padding: 1rem;
   margin: 2rem;
   width: 20rem;
+}
+@media only screen and (max-width: 1450px) {
+  .resolved {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 1160px) {
+  .resolved {
+    width: 98%;
+  }
 }
 .editForm {
   padding: 0.5rem 2rem;
