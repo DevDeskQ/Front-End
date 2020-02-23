@@ -41,27 +41,6 @@ function EditTicket({ getTicketById, putStudentTicket, match, editData, history,
 
     const saveEdit = (e) => {
       e.preventDefault();
-        if (newState.title === undefined) {
-            setNewState({
-                ...newState,
-                title: editData.title
-            })
-        } else if (newState.description === undefined) {
-            setNewState({
-                ...newState,
-                description: editData.description
-            })
-        } else if(newState.tried === undefined) {
-            setNewState({
-                ...newState,
-                tried: editData.tried
-            })
-        } else if (newState.status === undefined) {
-            setNewState({
-                ...newState,
-                status: editData.status
-            })
-        }
 
       // if (newState.description === undefined) {
       //     setNewState({
@@ -154,7 +133,7 @@ if (editData.categories === undefined) {
                     {/*</select>*/}
 
                     <label className="titles center">
-                        Status - <input type="radio" id="opened" checked={true}  name="status" value="opened" onChange={e => setNewState({...newState, status: e.target.value})} />
+                        Status - <input type="radio" id="opened"  name="status" value="opened" onChange={e => setNewState({...newState, status: e.target.value})} />
                         <label htmlFor="opened">Open</label>
 
                         <input type="radio" id="resolved" name="status" value="resolved" onChange={e => setNewState({...newState, status: e.target.value})} />
