@@ -6,34 +6,23 @@ import { Link } from 'react-router-dom';
 
 function StudentDashboard({ info, id, getStudentTickets, tickets, category }) {
 
-    useEffect(() => {
-        getStudentTickets();
-        if (tickets === undefined) {
-            tickets = [{
-                title: "Example card",
-                categories: [{
-                    name: "React for example"
-                }],
-                username: info.student.username,
-                description: "What is blocking you?",
-                tried: "Tell us about what you've tried so far",
-                status: "open"
-            }]
-        }
+    useEffect( () => {
+        (async () => {
+          await getStudentTickets(id)
+       })()
     },[]);
 
-    let openTicket = tickets.filter(arr => {
-        return arr.status === "opened"
+     let openTicket = tickets.filter(arr => {
+        return arr.status === "open"
     });
 
     let resolvedTicket = tickets.filter(arr => {
         return arr.status === "resolved"
     });
 
-    console.log(tickets);
-if (tickets.categories === null) {
-    return <h1>Is Loading</h1>
-} else {
+    if ( tickets.categories === null) {
+        return <h1>Is Loading....</h1>
+    } else {
     return (
         <div className="Container studentContainer">
             <div className="titleBlock">
@@ -53,14 +42,15 @@ if (tickets.categories === null) {
             </div>
 
             <div className="studentTicket">
+
                 {tickets.map((arr, index) => {
                     return (
-                        <div key={arr.id} {...arr.status === "opened" ? {className: "open"} : {className: "resolved"}} >
+                        <div key={arr.id} {...arr.status === "open" ? {className: "open"} : {className: "resolved"}} >
                             <h2 className="titles ticketTitle">{arr.title}</h2>
                             {arr.categories.map((arr => {
-                               return  <h4 key={arr.id} className="titles">{arr.name}</h4>
+                               return  <h4 key={Math.random()} className="titles">{arr}</h4>
                             }))}
-                            <h4><span className="titles">Students Name - </span>{arr.student.username}</h4>
+                            <h4><span className="titles">Students Name - </span>{info.student.username}</h4>
                             <p><span className="titles"> Description - </span>{arr.description}</p>
                             <p><span className="titles">What I've Tried - </span>{arr.tried}</p>
                             <p><span className="titles">Status of Ticket - </span>{arr.status}</p>

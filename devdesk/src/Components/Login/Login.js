@@ -23,7 +23,7 @@ function Login({ postStudentLogin, history }) {
         postStudentLogin(login);
         setTimeout(() => {
             history.push("/dashboard")
-        },1000);
+        },2000);
     };
 
     return (

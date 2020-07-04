@@ -11,7 +11,7 @@ const CreateTicket = ({ postStudentTicket, history, id }) => {
         description: "",
         tried: "",
         category: [],
-        status: "opened"
+        status: "open"
     });
 
     useEffect(() => {
@@ -27,16 +27,10 @@ const CreateTicket = ({ postStudentTicket, history, id }) => {
     },[]);
 
 
-    const arrayHandler = (e) => {
+    const arrayHandler = e => {
+        console.log(e.target.value)
         e.preventDefault();
-        let arrID = Number(e.target.value);
-        let newArr = cat.filter((item) => {
-           if (item.id === arrID) {
-               return item
-           }
-        });
-        let newData = newArr[0].name;
-        data.category.push(newData);
+        data.category.push(Number(e.target.value));
     };
 
     const changeHandler = (event) => {
@@ -48,6 +42,7 @@ const CreateTicket = ({ postStudentTicket, history, id }) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        console.log(data)
         postStudentTicket(data);
         setTimeout(() => {
             history.push("/dashboard")
@@ -67,7 +62,7 @@ const CreateTicket = ({ postStudentTicket, history, id }) => {
                <label className="align titles">Select Category</label>
                    <select onChange={arrayHandler} className="categories" multiple >
                        {cat.map((item, index, ) => {
-                           return <option name={item.name} value={Number(item.id)}  key={index}>{item.name}</option>
+                           return <option name={item.title} value={item.id}  key={index}>{item.title}</option>
                        })}
                    </select>
                <button type="submit" className="loginBtn">Submit</button>

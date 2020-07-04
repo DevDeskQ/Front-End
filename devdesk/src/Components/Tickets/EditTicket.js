@@ -17,7 +17,9 @@ function EditTicket({ getTicketById, putStudentTicket, match, editData, history,
 
     const id = match.params.id;
     useEffect(() => {
-        getTicketById(id);
+        (async () => {
+            getTicketById(id);
+        })()
     },[getTicketById, id]);
 
     // useEffect(() => {
@@ -101,10 +103,10 @@ if (editData.categories === undefined) {
     return (
         <div className="Container">
             <div className="studentTicket">
-                <div onClick={() => edit(newState)} {...editData.status === "opened" ? {className: "open"} : {className: "resolved"}} >
+                <div onClick={() => edit(newState)} {...editData.status === "open" ? {className: "open"} : {className: "resolved"}} >
                     <h2 className="titles ticketTitle">{editData.title}</h2>
                     {editData.categories.map((item, index) => {
-                        return ( <h4 key={index} className="titles">{item.name}</h4> )
+                        return ( <h4 key={index} className="titles">{item}</h4> )
                     })}
                     <h4><span className="titles">Students Name - </span>{editData.username}</h4>
                     <p><span className="titles"> Description - </span>{editData.description}</p>

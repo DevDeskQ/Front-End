@@ -5,13 +5,14 @@ export const GET_TICKET_BY_ID = "GET_TICKET_BY_ID";
 export const PUT_STUDENT_TICKET = "PUT_STUDENT_TICKET";
 export const POST_STUDENT_TICKET = "POST_STUDENT_TICKET";
 export const SORT_ALL_STUDENT_TICKETS = "SORT_ALL_STUDENT_TICKETS";
+export const GET_ALL_STUDENT_TICKETS = "GET_ALL_STUDENT_TICKETS"
 
-export function getStudentTickets() {
+export function getStudentTickets(id) {
 
     return dispatch => {
 
         Axios()
-            .get(`tickets`)
+            .get(`tickets/${id}`)
             .then(res => {
                 console.log(res)
                 dispatch({ type: GET_STUDENT_TICKETS, payload: {
@@ -28,18 +29,11 @@ export function getTicketById(id) {
 
     return dispatch => {
         Axios()
-            .get(`tickets/${id}`)
+            .get(`tickets/edit/${id}`)
             .then(res => {
-                console.log(res.data.categories);
+                console.log(res.data);
                 dispatch({ type: GET_TICKET_BY_ID, payload: {
-                            username: res.data.student.username,
-                            description: res.data.description,
-                            id: res.data.id,
-                            status: res.data.status,
-                            studentID: res.data.student_id,
-                            title: res.data.title,
-                            tried: res.data.tried,
-                            categories: res.data.categories
+                    data: res.data
                     }})
             })
             .catch(err => {
@@ -86,12 +80,13 @@ export function sortAllStudentTickets(data) {
         Axios()
             .get("tickets")
             .then(res => {
+                console.log(res)
                 console.log(data);
-                console.log(res.data[0].categories[0].name);
+                console.log(res.data[0].categories[0].title);
                 let sorted = [];
                    for (let i = 0; i < res.data.length; i ++) {
                        res.data[i].categories.map(arr => {
-                           if (arr.name === data) {
+                           if (arr === data) {
                                sorted.push(res.data[i]);
                                console.log(sorted)
                            }
@@ -103,6 +98,24 @@ export function sortAllStudentTickets(data) {
             .catch(err => {
                 console.log(err)
             });
+    }
+}
+
+export function getAllStudentTickets() {
+
+    return dispatch => {
+
+        Axios()
+            .get('tickets')
+            .then(res => {
+                console.log(res)
+                dispatch({ type: GET_ALL_STUDENT_TICKETS, payload: {
+                    data: res.data
+                    }});
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 }
 

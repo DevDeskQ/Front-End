@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Axios from '../../Utils/Axios';
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import { sortAllStudentTickets } from "../../Actions/StudentTickets";
+import {getAllStudentTickets, sortAllStudentTickets} from "../../Actions/StudentTickets";
 
-function AllTickets({ allTickets, info, sortAllStudentTickets }) {
+function AllTickets({ allTickets, info, sortAllStudentTickets, getAllStudentTickets }) {
 
     const [cat, setCat] = useState(null);
     const [data, setData] = useState({});
@@ -20,15 +20,24 @@ function AllTickets({ allTickets, info, sortAllStudentTickets }) {
             })
     },[allTickets]);
 
+    useEffect(() => {
+        (async () => {
+            await getAllStudentTickets
+        })()
+    }, [])
+
     const arrayHandler = (e) => {
+        console.log(e.target.value)
+        console.log(cat)
         e.preventDefault();
         let arrID = Number(e.target.value);
-        let newArr = cat.filter((item) => {
+        let newArr = []
+            cat.map((item) => {
             if (item.id === arrID) {
-                return item
+                newArr.push(item)
             }
         });
-        setData(newArr[0].name.toString());
+        setData(newArr[0].title);
     };
 
     const filterHandler = (e) => {
@@ -56,7 +65,7 @@ if (allTickets === undefined ) {
                 <label className="align titles helpTitle">Select a Category to Search</label>
                 <select onChange={arrayHandler} className="categories helpCate" >
                     {cat.map((item, index, ) => {
-                        return <option name={item.name} value={Number(item.id)}  key={index}>{item.name}</option>
+                        return <option name={item.title} value={Number(item.id)}  key={index}>{item.title}</option>
                     })}
                 </select>
                     <button type="submit" onClick={filterHandler} className="linkBtn loginBtn helpBtn" >Submit</button>
@@ -64,16 +73,16 @@ if (allTickets === undefined ) {
             <div className="studentTicket">
                 {allTickets.map((arr, index) => {
                     return (
-                        <div key={arr.id} {...arr.status === "opened" ? {className: "open"} : {className: "resolved"}} >
+                        <div key={arr.id} {...arr.status === "open" ? {className: "open"} : {className: "resolved"}} >
                             <h2 className="titles ticketTitle">{arr.title}</h2>
                             {arr.categories.map((arr => {
-                                return  <h4 key={arr.id} className="titles">{arr.name}</h4>
+                                return  <h4 key={Math.random()} className="titles">{arr.title}</h4>
                             }))}
-                            <h4><span className="titles">Students Name - </span>{arr.student.username}</h4>
+                            <h4><span className="titles">Students Name - </span>{arr.username}</h4>
                             <p><span className="titles"> Description - </span>{arr.description}</p>
                             <p><span className="titles">What I've Tried - </span>{arr.tried}</p>
                             <p><span className="titles">Status of Ticket - </span>{arr.status}</p>
-                            <Link className="linkBtn loginBtn" to={`/helper/${arr.id}`}>Update</Link>
+                            <Link className="linkBtn loginBtn" to={`/helper/${arr.id}`}>Light The Way...</Link>
                         </div>
                     )
                 })}
@@ -91,7 +100,8 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-    sortAllStudentTickets
+    sortAllStudentTickets,
+    getAllStudentTickets
 };
 
 
