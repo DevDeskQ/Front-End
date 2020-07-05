@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {connect} from "react-redux";
-import {createAnswer, getTicketById, putStudentTicket} from "../../Actions/StudentTickets";
-import { Link } from "react-router-dom";
+import {createAnswer, getTicketById } from "../../Actions/StudentTickets";
 import Axios from "../../Utils/Axios";
 
 function HelperTicket({ getTicketById, createAnswer, match, editData, history, info }) {

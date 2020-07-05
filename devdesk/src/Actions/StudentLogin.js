@@ -1,5 +1,4 @@
 import Axios from '../Utils/Axios';
-import { getStudentTickets } from "./StudentTickets";
 
 export const POST_STUDENT_LOGIN = 'POST_STUDENT_LOGIN';
 

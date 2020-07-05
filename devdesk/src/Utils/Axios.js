@@ -3,7 +3,7 @@ const axios = require('axios')
   const Axios = () => {
   const token = localStorage.getItem('token')
   return axios.create({
-    baseURL: 'https://git.heroku.com/dev-desk-jt.git',
+    baseURL: 'https://dev-desk-jt.herokuapp.com/api/',
     headers: {
       Authorization: token
     }

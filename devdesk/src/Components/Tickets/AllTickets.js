@@ -24,7 +24,7 @@ function AllTickets({ allTickets, info, sortAllStudentTickets, getAllStudentTick
         (async () => {
             await getAllStudentTickets
         })()
-    }, [])
+    }, [getAllStudentTickets])
 
     const arrayHandler = (e) => {
         console.log(e.target.value)
@@ -36,6 +36,7 @@ function AllTickets({ allTickets, info, sortAllStudentTickets, getAllStudentTick
             if (item.id === arrID) {
                 newArr.push(item)
             }
+            return console.log('return')
         });
         setData(newArr[0].title);
     };

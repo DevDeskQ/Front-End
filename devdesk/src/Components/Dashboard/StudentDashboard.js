@@ -10,7 +10,7 @@ function StudentDashboard({ info, id, getStudentTickets, tickets, category }) {
         (async () => {
           await getStudentTickets(id)
        })()
-    },[]);
+    },[getStudentTickets, id]);
 
      let openTicket = tickets.filter(arr => {
         return arr.status === "open"
