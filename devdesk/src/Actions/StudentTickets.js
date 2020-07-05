@@ -5,7 +5,8 @@ export const GET_TICKET_BY_ID = "GET_TICKET_BY_ID";
 export const PUT_STUDENT_TICKET = "PUT_STUDENT_TICKET";
 export const POST_STUDENT_TICKET = "POST_STUDENT_TICKET";
 export const SORT_ALL_STUDENT_TICKETS = "SORT_ALL_STUDENT_TICKETS";
-export const GET_ALL_STUDENT_TICKETS = "GET_ALL_STUDENT_TICKETS"
+export const GET_ALL_STUDENT_TICKETS = "GET_ALL_STUDENT_TICKETS";
+export const POST_ANSWER = 'POST_ANSWER';
 
 export function getStudentTickets(id) {
 
@@ -118,4 +119,20 @@ export function getAllStudentTickets() {
             })
     }
 }
+
+export function createAnswer(data) {
+
+    return dispatch => {
+
+        Axios()
+            .post('answer', data)
+            .then(res => {
+                console.log(data);
+                console.log(res.data);
+                dispatch({ type: POST_ANSWER })
+            })
+                .catch(err => {
+                    console.log(err)
+                })
+    }}
 

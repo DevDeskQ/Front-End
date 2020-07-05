@@ -478,6 +478,78 @@ a:hover {
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
+.answerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  background-color: #63B9B0;
+  border-radius: 1rem;
+  line-height: 1.5;
+  width: 50rem;
+}
+.containerForm {
+  background-color: #CFE3E2;
+  display: flex;
+  flex-direction: column;
+  width: 90rem;
+  margin: 6rem auto;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+@media only screen and (max-width: 1450px) {
+  .containerForm {
+    width: 95%;
+  }
+}
+.studentTicketForm {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  width: auto;
+  border-radius: 1rem;
+  margin: 2rem 1rem;
+  font-family: 'Raleway', sans-serif;
+  background-color: #63B9B0;
+  line-height: 1.5;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.answerInput {
+  height: 5rem;
+}
+.answerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  color: #9CC03C;
+  background-color: white;
+  border-radius: 1rem;
+  line-height: 1.5;
+  width: 50rem;
+}
+.editContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 1rem;
+  line-height: 1.5;
+  width: 48rem;
+}
 .createTicket {
   display: flex;
   justify-content: center;

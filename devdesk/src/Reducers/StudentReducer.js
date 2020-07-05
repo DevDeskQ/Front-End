@@ -4,6 +4,7 @@ import { GET_STUDENT_TICKETS, PUT_STUDENT_TICKET, SORT_ALL_STUDENT_TICKETS } fro
 import { GET_TICKET_BY_ID } from "../Actions/StudentTickets";
 import { POST_STUDENT_TICKET } from "../Actions/StudentTickets";
 import { GET_ALL_STUDENT_TICKETS } from "../Actions/StudentTickets";
+import { POST_ANSWER} from "../Actions/StudentTickets";
 
 const initialState = {
     username: "",
@@ -61,6 +62,10 @@ export default function StudentReducer( state = initialState, action ) {
             return {
                 ...state,
                 // allTickets: action.payload.data
+            };
+        case POST_ANSWER:
+            return {
+                ...state
             };
         default:
             return state

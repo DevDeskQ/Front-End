@@ -7,8 +7,9 @@ import Axios from "../../Utils/Axios";
 function EditTicket({ getTicketById, putStudentTicket, match, editData, history, info }) {
 
     const [editState, setEditState] = useState(false);
+    const [answers, setAnswers] = useState(null);
     const [newState, setNewState] = useState({
-        helper_id: info.student.id,
+        user_id: info.student.id,
         title: editData.title,
         description: editData.description,
         tried: editData.tried,
@@ -22,19 +23,19 @@ function EditTicket({ getTicketById, putStudentTicket, match, editData, history,
         })()
     },[getTicketById, id]);
 
-    // useEffect(() => {
-    //     Axios()
-    //         .get("categories")
-    //         .then(res => {
-    //             console.log(res.data);
-    //             setCate(res.data)
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    // },[]);
-
-    // const [cate, setCate] = useState(null);
+       useEffect(() => {
+        (async () => {
+            Axios()
+                .get(`answer/${id}`)
+                .then(res => {
+                    console.log(res)
+                    setAnswers(res.data)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        })()
+    },[id])
 
     const edit = tick => {
         setEditState(true);
@@ -43,23 +44,9 @@ function EditTicket({ getTicketById, putStudentTicket, match, editData, history,
 
     const saveEdit = (e) => {
       e.preventDefault();
-
-      // if (newState.description === undefined) {
-      //     setNewState({
-      //         ...newState,
-      //         title: editData.title
-      //     })
-      // }
-      // if (newState.tried === "") {
-      //     setNewState({
-      //         ...newState,
-      //         tried: editData.tried
-      //     })
-      // }
       putStudentTicket(editData.id, newState);
         setEditState(false);
         setTimeout(() => {
-            // window.location.reload();
             history.push("/dashboard")
         }, 300);
     };
@@ -82,26 +69,13 @@ function EditTicket({ getTicketById, putStudentTicket, match, editData, history,
             })
     };
 
-    // const arrayHandler = (e) => {
-    //     e.preventDefault();
-    //     let arrID = Number(e.target.value);
-    //     let newArr = cate.filter((item) => {
-    //         if (item.id === arrID) {
-    //             return item
-    //         }
-    //     });
-    //     let newData = newArr[0].name;
-    //     newState.category.push(newData);
-    // };
-console.log(newState);
-console.log(editData);
-console.log(newState);
 
-if (editData.categories === undefined) {
+if (editData.categories === undefined || answers === null) {
     return <h1>Is Loading</h1>
 } else {
     return (
         <div className="Container">
+            <div className='editContainer'>
             <div className="studentTicket">
                 <div onClick={() => edit(newState)} {...editData.status === "open" ? {className: "open"} : {className: "resolved"}} >
                     <h2 className="titles ticketTitle">{editData.title}</h2>
@@ -114,6 +88,15 @@ if (editData.categories === undefined) {
                     <p><span className="titles">Status of Ticket - </span>{editData.status}</p>
                     <Link className="loginBtn linkBtn" to={`/ticket/${editData.id}`}>Update</Link>
                 </div>
+                {answers.map(arr => {
+                    return (
+                        <div className="answerContainer" key={arr.id}>
+                             <h4>{arr.username}</h4>
+                            <p>{arr.answer}</p>
+                        </div>
+                    )
+                })}
+            </div>
             </div>
             {editState && (
                 <form className="editForm" onSubmit={saveEdit}>
